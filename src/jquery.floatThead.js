@@ -552,7 +552,9 @@
 
           if(createElements){
             $fthRow.empty();
-            $fthRow.append(psuedo);
+	    for(var x = 0; x < psuedo.length; x++){ 
+		$fthRow.append(psuedo[x]);
+	    }
             $fthCells = $fthRow.find('fthtd');
           }
 
