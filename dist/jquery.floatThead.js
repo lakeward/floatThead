@@ -429,7 +429,9 @@
         floatTableHidden = true;
       }
 
-      $floatTable.addClass(opts.floatTableClass).css({'margin': 0, 'border-bottom-width': 0}); //must have no margins or you won't be able to click on things under floating table
+      // Flatirons: Disable margin=0. Not working for TechSuite rendering
+      $floatTable.addClass(opts.floatTableClass).css({'border-bottom-width': 0}); 
+      //$floatTable.addClass(opts.floatTableClass).css({'margin': 0, 'border-bottom-width': 0}); //must have no margins or you won't be able to click on things under floating table
 
       if(useAbsolutePositioning){
         var makeRelative = function($container, alwaysWrap){
@@ -552,6 +554,7 @@
 
           if(createElements){
             $fthRow.empty();
+	    // Flatirons: Add nodes individually and not as list
 	    for(var x = 0; x < psuedo.length; x++){ 
 		$fthRow.append(psuedo[x]);
 	    }
